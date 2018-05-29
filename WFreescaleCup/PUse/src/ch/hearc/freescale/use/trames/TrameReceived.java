@@ -1,7 +1,7 @@
 
 package ch.hearc.freescale.use.trames;
 
-import ch.hearc.freescale.api.gui.presenter.annotation.container.DisplayDeskop;
+import ch.hearc.freescale.api.gui.presenter.annotation.container.DisplayGrid;
 import ch.hearc.freescale.api.gui.presenter.annotation.jcomponent.DisplayCurveAbsolute;
 import ch.hearc.freescale.api.gui.presenter.annotation.jcomponent.DisplayCurveRelatif;
 import ch.hearc.freescale.api.gui.presenter.annotation.jcomponent.DisplayDigit;
@@ -57,7 +57,7 @@ import ch.hearc.freescale.api.protocol.Trame_I;
  * 			Voire pUse_Tuto_Server pour un l'utilisation du simulateur
  *
  */
-@DisplayDeskop
+@DisplayGrid
 public class TrameReceived implements Trame_I
 	{
 
@@ -207,6 +207,7 @@ public class TrameReceived implements Trame_I
 	private Float vitesseGauche;
 	private Float vitesseDroite;
 	private Float accelerationX;
+	@DisplayGauge
 	private Float accelerationY;
 	private Float accelerationZ;
 	private Float champMagnetiqueX;
@@ -215,7 +216,9 @@ public class TrameReceived implements Trame_I
 	private Float yaw;
 	private Float roll;
 	private Float pitch;
+	@DisplayImageRoll
 	private Byte image;
 	private int alignement;
+	@DisplayImageCurve
 	private Float sinus0a2;
 	}
