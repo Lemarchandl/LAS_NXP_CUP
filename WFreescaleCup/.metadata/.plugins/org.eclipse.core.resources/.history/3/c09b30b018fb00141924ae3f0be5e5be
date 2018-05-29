@@ -1,0 +1,129 @@
+
+package ch.hearc.freescale.gui.presenter.creator;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+
+import ch.hearc.freescale.exception.VoitureException;
+import ch.hearc.freescale.gui.frame.panel.JFreescaleGridLayout;
+import ch.hearc.freescale.gui.frame.panel.JFreescaleSplitPane;
+import ch.hearc.freescale.gui.presenter.annotation.container.DisplayGrid;
+import ch.hearc.freescale.gui.presenter.annotation.container.DisplayDeskop;
+import ch.hearc.freescale.gui.presenter.annotation.container.DisplaySplit;
+import ch.hearc.freescale.gui.presenter.container.jpaneldesctoppane.JFrameDesktopPane;
+import ch.hearc.freescale.gui.presenter.jframe.JFreescaleFrame;
+import ch.hearc.freescale.gui.sender.annotation.SendableTrame;
+import ch.hearc.freescale.gui.sender.jcomponent.JTrameSender;
+import ch.hearc.freescale.protocol.ReflexionTools;
+import ch.hearc.freescale.protocol.Trame_I;
+import ch.hearc.freescale.voiture.Voiture_I;
+
+public class FrameCreator
+	{
+
+	/*------------------------------------------------------------------*\
+	|*							Constructeurs							*|
+	\*------------------------------------------------------------------*/
+
+	public FrameCreator(Class<? extends Trame_I> trame, Voiture_I voiture)
+		{
+		this.voiture = voiture;
+		this.trame = trame;
+		}
+
+	/*------------------------------------------------------------------*\
+	|*							Methodes Public							*|
+	\*------------------------------------------------------------------*/
+
+	public void create() throws VoitureException
+		{
+		//Generate list components
+		createComponents();
+
+		//Create frame
+		createFrame();
+		}
+
+	/*------------------------------*\
+	|*				Set				*|
+	\*------------------------------*/
+
+	/*------------------------------*\
+	|*				Get				*|
+	\*------------------------------*/
+
+	/*------------------------------------------------------------------*\
+	|*							Methodes Private						*|
+	\*------------------------------------------------------------------*/
+
+	private void createComponents() throws VoitureException
+		{
+		listComponents = new ArrayList<JComponent>();
+		Field tabFields[] = null;
+		try
+			{
+			tabFields = ReflexionTools.getTabAttributsField(trame);
+			}
+		catch (Exception e)
+			{
+			throw new VoitureException("Error when reading class member", e);
+			}
+
+		for(Field field:tabFields)
+			{
+			JComponentsFieldCreator creator = new JComponentsFieldCreator(field, voiture);
+			creator.createComponents();
+			listComponents.addAll(creator.getListComponents());
+			}
+		}
+
+	private void createFrame()
+		{
+		for(Annotation annotation:trame.getAnnotations())
+			{
+			if (annotation instanceof DisplayGrid)
+				{
+				JFrame frame = new JFreescaleFrame(new JFreescaleGridLayout(listComponents),trame.getName());
+				}
+
+			if (annotation instanceof DisplaySplit)
+				{
+				JFrame frame = new JFreescaleFrame(new JFreescaleSplitPane(listComponents),trame.getName());
+				}
+
+			if (annotation instanceof DisplayDeskop)
+				{
+				JFrame frame = new JFreescaleFrame(new JFrameDesktopPane(listComponents),trame.getName());
+				}
+
+			if (annotation instanceof SendableTrame)
+				{
+				try
+					{
+					JFrame frame = new JFreescaleFrame(new JTrameSender(trame, voiture),trame.getName());
+					}
+				catch (Exception e)
+					{
+					e.printStackTrace();
+					}
+				}
+			}
+		}
+
+	/*------------------------------------------------------------------*\
+	|*							Attributs Private						*|
+	\*------------------------------------------------------------------*/
+
+	//Input
+	Class<? extends Trame_I> trame;
+	Voiture_I voiture;
+
+	//Tool
+	List<JComponent> listComponents;
+
+	}

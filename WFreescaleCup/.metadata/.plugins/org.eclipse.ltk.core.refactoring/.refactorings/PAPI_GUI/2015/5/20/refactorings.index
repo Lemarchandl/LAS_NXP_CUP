@@ -1,0 +1,98 @@
+1431361161478	Rename type 'DisplayInJauge'
+1431361310973	Rename type 'JGraphic'
+1431361327219	Rename type 'DisplayInGraphic'
+1431361354481	Rename type 'JJauge'
+1431361471059	Rename type 'JAiguille'
+1431361497538	Rename type 'DisplayInAiguille'
+1431445485934	Rename type 'DisplayInInternlFrame'
+1431445818910	Rename method 'maximum'
+1431445823785	Rename method 'minimum'
+1431445827614	Rename method 'maximum'
+1431445872975	Rename method 'minimum'
+1431451898904	Delete element
+1431451923812	Delete element
+1431451933781	Move compilation unit
+1431451936344	Delete element
+1431452001286	Delete element
+1431452011724	Move compilation unit
+1431452396489	Delete element
+1431452629158	Move compilation units
+1431452631252	Delete element
+1431452658775	Delete element
+1431452708181	Move compilation unit
+1431452721291	Move compilation unit
+1431452723072	Delete element
+1431452724932	Delete element
+1431452731856	Delete element
+1431696766190	Delete element
+1431696786660	Move compilation units
+1431696792357	Delete element
+1431696798409	Delete element
+1431696800527	Delete element
+1431697256063	Move compilation unit
+1431697258280	Delete element
+1431697262036	Delete element
+1431697345671	Rename package 'ch.hearc.freescale.gui.presenter.annotation.JFrame'
+1431697351121	Move compilation unit
+1431697354323	Delete element
+1431697369405	Delete element
+1431697373991	Move compilation unit
+1431697375198	Delete element
+1431697376468	Delete element
+1431697389235	Delete element
+1431697410201	Delete element
+1431697439569	Move compilation units
+1431697453562	Move compilation units
+1431697455500	Delete element
+1431697457322	Delete element
+1431697461470	Delete element
+1431697470915	Delete element
+1431697503290	Move compilation unit
+1431697519175	Move compilation unit
+1431697522342	Delete element
+1431697540437	Rename type 'JTrameCreator'
+1431697570986	Move compilation units
+1431697573862	Delete element
+1431697576583	Delete element
+1431697577843	Delete element
+1431697662792	Move compilation units
+1431697897901	Rename type 'DisplayInGrindLayout'
+1431697914889	Rename type 'DisplayGridLayout'
+1431697940519	Rename type 'DisplayInInternalFrame'
+1431697960921	Rename type 'DisplayInSplitPane'
+1431704271141	Rename type 'ComponentCreator'
+1431704418236	Rename type 'FrameCreator'
+1431870518282	Delete element
+1431875947475	Rename method 'createFrames'
+1431877927087	Move compilation units
+1431877932516	Delete element
+1431877935658	Delete element
+1431877937409	Delete element
+1431878022487	Rename type 'JFreescaleGridLayout'
+1431878041702	Rename type 'JFreescaleSplitPane'
+1431878064566	Rename type 'JFrameDesktopPane'
+1431878079469	Rename package 'ch.hearc.freescale.gui.presenter.container.jpaneldesctoppane'
+1431878091134	Rename package 'ch.hearc.freescale.gui.presenter.container.jdisplaydesctop'
+1431879248568	Rename type 'NumberView_I'
+1431879260394	Rename type 'ImageView_I'
+1431879298181	Rename type 'DisplayInChart'
+1431879312401	Rename type 'DisplayInFreescaleImage'
+1431879324562	Rename type 'DisplayInLabel'
+1431879343453	Rename type 'DisplayInLevel'
+1431879351845	Rename type 'DisplayInImageCurve'
+1431879362965	Rename type 'DisplayInGauge'
+1431879380589	Rename type 'DisplayCurve'
+1431879390990	Copy compilation unit
+1431879404693	Rename type 'CopyOfDisplayCurveAbsolute'
+1431880100852	Rename type 'JFreescaleImage'
+1431880199446	Rename method 'dessiner'
+1431880205780	Rename method 'dray'
+1431880320955	Move compilation unit
+1431880332041	Rename package 'ch.hearc.freescale.gui.presenter.jcomponent.image.JImageRoll'
+1431880379858	Delete element
+1431880597841	Delete element
+1431880943422	Rename type 'JChart'
+1431881799883	Rename type 'JFreescaleFrame'
+1431893500905	Rename type 'JCurve'
+1431893994270	Rename type 'JValueIndicator'
+1431897044078	Rename package 'ch.hearc.freescale.gui.presenter.container.jpaneldesctoppane.atom'

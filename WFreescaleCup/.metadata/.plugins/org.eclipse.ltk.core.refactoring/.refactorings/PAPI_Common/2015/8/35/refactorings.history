@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;ch.hearc.freescale&apos; to &apos;ch.hearc.freescale.api&apos;&#x0D;&#x0A;- Original project: &apos;PAPI_Common&apos;&#x0D;&#x0A;- Original element: &apos;PAPI_Common/src/ch.hearc.freescale&apos;&#x0D;&#x0A;- Renamed element: &apos;PAPI_Common/src/ch.hearc.freescale.api&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings&#x0D;&#x0A;- Rename subpackages of the package" description="Rename package &apos;ch.hearc.freescale&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;ch.hearc.freescale" name="ch.hearc.freescale.api" qualified="false" references="true" stamp="1440410556571" textual="false" version="1.0"/>
+</session>

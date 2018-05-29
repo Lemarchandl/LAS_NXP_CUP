@@ -1,0 +1,13 @@
+1432558168359	Rename package 'ch.hearc.freescale.gui.sender.jcomponent.fieldEditorPanel'
+1432558207533	Move compilation unit
+1432558210080	Delete element
+1432558430794	Rename type 'JFieldEditorPanel'
+1432563623205	Rename type 'JFreescaleInternalFrame'
+1432563640909	Rename type 'JPersistentInternFrame'
+1432579710840	Rename method 'setInternalFrameToDefaultPosition'
+1432581131954	Delete element
+1433062901672	Move compilation unit
+1433062906411	Delete element
+1433063002942	Move compilation unit
+1433063015605	Move compilation unit
+1433063197609	Rename local variable 'decorator'

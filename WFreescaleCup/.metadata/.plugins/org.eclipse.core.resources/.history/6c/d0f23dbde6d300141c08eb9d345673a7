@@ -1,0 +1,70 @@
+
+package ch.hearc.freescale.serveur.simulateur;
+
+import java.lang.reflect.Field;
+
+import ch.hearc.freescale.protocol.ReflexionTools;
+import ch.hearc.freescale.protocol.Trame_I;
+
+public class SinusTrameGenerator implements TrameGenerator_I
+	{
+
+	/*------------------------------------------------------------------*\
+	|*							Constructeurs							*|
+	\*------------------------------------------------------------------*/
+
+	/**
+	 * SinusTrameGenerator modifie la trame pour créer des sinus entre avec les champs
+	 * @param trame Trame à modifier
+	 * @param dephasage Dephasage en radian entres les paramètres
+	 */
+	public SinusTrameGenerator(Trame_I trame, double dephasage)
+		{
+		this.dephasage = dephasage;
+		this.trame = trame;
+		}
+
+	/*------------------------------------------------------------------*\
+	|*							Methodes Public							*|
+	\*------------------------------------------------------------------*/
+
+	@Override
+	public Trame_I generate()
+		{
+		int fieldCount;
+		try
+			{
+			for(Field field:ReflexionTools.getTabAttributsField(trame))
+				{
+				if (field.getType() == Float.class)
+					{
+					field.set(123, new Float(23));
+					}
+
+				}
+			}
+		catch (Exception e)
+			{
+			System.err.println("Reflection tool error");
+			e.printStackTrace();
+			}
+		iteration++;
+		return trame;
+		}
+
+	/*------------------------------------------------------------------*\
+	|*							Methodes Private						*|
+	\*------------------------------------------------------------------*/
+
+	/*------------------------------------------------------------------*\
+	|*							Attributs Private						*|
+	\*------------------------------------------------------------------*/
+
+	//Input
+	private Trame_I trame;
+	private double dephasage;
+
+	//Tool
+	private int iteration;
+
+	}

@@ -1,0 +1,51 @@
+
+package ch.hearc.freescale.gui.presenter.creator;
+
+import ch.hearc.freescale.protocol.Trame_I;
+import ch.hearc.freescale.voiture.Voiture_I;
+
+
+
+public class JFrameClassCreator
+	{
+
+	/*------------------------------------------------------------------*\
+	|*							Constructeurs							*|
+	\*------------------------------------------------------------------*/
+
+	public JFrameClassCreator(Class<? extends Trame_I> trame, Voiture_I voiture)
+		{
+		this.trame = trame;
+		this.voiture = voiture;
+		}
+
+	/*------------------------------------------------------------------*\
+	|*							Methodes Public							*|
+	\*------------------------------------------------------------------*/
+
+	/*------------------------------*\
+	|*				Set				*|
+	\*------------------------------*/
+
+	/*------------------------------*\
+	|*				Get				*|
+	\*------------------------------*/
+
+	/*------------------------------------------------------------------*\
+	|*							Methodes Private						*|
+	\*------------------------------------------------------------------*/
+
+	public void create()
+
+	/*------------------------------------------------------------------*\
+	|*							Attributs Private						*|
+	\*------------------------------------------------------------------*/
+
+	//Input
+	private Class<? extends Trame_I> trame;
+	private Voiture_I voiture;
+
+	//Output
+	private List<JFrame> frames;
+	}
+

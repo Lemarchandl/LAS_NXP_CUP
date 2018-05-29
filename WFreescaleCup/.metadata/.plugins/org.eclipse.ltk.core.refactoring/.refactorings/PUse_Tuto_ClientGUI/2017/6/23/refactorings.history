@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;UseTutoClientGUI.java&apos; to &apos;PUse_Tuto_ServerSimulator/src/ch.hearc.freescale.use.tuto.server.simulator.client&apos;&#x0D;&#x0A;- Original project: &apos;PUse_Tuto_ClientGUI&apos;&#x0D;&#x0A;- Destination element: &apos;PUse_Tuto_ServerSimulator/src/ch.hearc.freescale.use.tuto.server.simulator.client&apos;&#x0D;&#x0A;- Original element: &apos;ch.hearc.freescale.use.tuto.client.gui.UseTutoClientGUI.java&apos;" description="Copy compilation unit" destination="=PUse_Tuto_ServerSimulator/src&lt;ch.hearc.freescale.use.tuto.server.simulator.client" element1="/src&lt;ch.hearc.freescale.use.tuto.client.gui{UseTutoClientGUI.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1497020942887" units="1" version="1.0"/>
+</session>

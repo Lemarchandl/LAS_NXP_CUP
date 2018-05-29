@@ -1,0 +1,18 @@
+1427128632785	Rename type 'TrameGenerator'
+1427128653395	Rename type 'TrameGenerator'
+1427215262714	Rename method 'saveToWorkbook'
+1427388772995	Rename package 'ch.hearc.freescale.Server'
+1427388820765	Rename package 'ch.hearc.freescale.Serveur'
+1427388840211	Move compilation units
+1427388842552	Delete element
+1427388912021	Rename method 'generateTrame'
+1427629450539	Rename method 'putByte'
+1427629500291	Rename method 'getByte'
+1427629663991	Move compilation unit
+1427634927730	Rename field 'receiving'
+1427635665998	Rename field 'trameEvents'
+1427637009519	Rename method 'WriteEvent'
+1427637522440	Rename method 'sortByClasses'
+1427637761699	Rename local variable 'events'
+1427644127856	Rename type 'MagasinTrame'
+1427648461148	Copy compilation unit

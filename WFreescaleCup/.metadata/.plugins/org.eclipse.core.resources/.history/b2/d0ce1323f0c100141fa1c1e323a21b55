@@ -1,0 +1,135 @@
+
+package ch.hearc.freescale.frame;
+
+import java.io.ByteArrayInputStream;
+
+import ch.hearc.freescale.Image;
+
+public class FrameDecoder
+	{
+	
+	/*------------------------------------------------------------------*\
+	|*							Constructeurs							*|
+	\*------------------------------------------------------------------*/
+	
+	public FrameDecoder(byte[] encodedFrame)
+		{
+		this.encodedFrame = encodedFrame;
+		}
+	
+	/*------------------------------------------------------------------*\
+	|*							Methodes Public							*|
+	\*------------------------------------------------------------------*/
+	
+	public Frame decode()
+		{
+		Frame frame = new Frame();
+		stream = new ByteArrayInputStream(encodedFrame);
+		//Start byte
+		int start = stream.read();
+		if (start != FrameDefinition.START_BYTE) { return null; }
+		//Header
+		getByte();
+		//AppID
+		getInt16();
+		
+		frame.setID(Byte.toUnsignedInt(getByte()));
+		//DATA
+		frame.setCharParam(getChar());
+		frame.setIntParam(getInt16());
+		frame.setFloatParam(getFloat());
+		frame.setImage(getImage());
+		
+		///CRC
+		CRC8 crc = new CRC8();
+		crc.update(encodedFrame, 1, encodedFrame.length - stream.available() - 1);
+		if (crc.getValue() != getByte()) { return null; }
+		//Stop
+		int stop = stream.read();
+		if (stop != FrameDefinition.STOP_BYTE) { return null; }
+		return frame;
+		}
+	
+	/*------------------------------*\
+	|*				Set				*|
+	\*------------------------------*/
+	
+	/*------------------------------*\
+	|*				Get				*|
+	\*------------------------------*/
+	
+	/*------------------------------------------------------------------*\
+	|*							Methodes Private						*|
+	\*------------------------------------------------------------------*/
+	
+	private Image getImage()
+		{
+		Image image = new Image();
+		byte pixels[] = new byte[Image.IMAGE_SIZE];
+		for(int i = 0; i < pixels.length; i++)
+			{
+			pixels[i] = getByte();
+			}
+		image.setPixels(pixels);
+		return image;
+		}
+	
+	private float getFloat()
+		{
+		return Float.intBitsToFloat(getInt32());
+		}
+	
+	private int getInt32()
+		{
+		int i = 0;
+		i |= Byte.toUnsignedInt(getByte());
+		i |= Byte.toUnsignedInt(getByte()) << 8;
+		i |= Byte.toUnsignedInt(getByte()) << 16;
+		i |= Byte.toUnsignedInt(getByte()) << 24;
+		return i;
+		}
+	
+	private short getInt16()
+		{
+		short i = 0;
+		i |= Byte.toUnsignedInt(getByte());
+		i |= Byte.toUnsignedInt(getByte()) << 8;
+		//TODO : Check sign
+		return i;
+		}
+	
+	/**
+	 * Read a char in the Frame
+	 * @return next char in the Frame
+	 */
+	private char getChar()
+		{
+		return (char)getByte();
+		}
+	
+	/**
+	 * Read a byte in the Frame
+	 * @return
+	 */
+	private byte getByte()
+		{
+		int i = stream.read();
+		if (i == FrameDefinition.ESC_BYTE)
+			{
+			i = stream.read();
+			}
+		else
+			{
+			i += 3;
+			}
+		return (byte)i;
+		}
+	
+	/*------------------------------------------------------------------*\
+	|*							Attributs Private						*|
+	\*------------------------------------------------------------------*/
+	
+	private byte[] encodedFrame;
+	
+	private ByteArrayInputStream stream;
+	}

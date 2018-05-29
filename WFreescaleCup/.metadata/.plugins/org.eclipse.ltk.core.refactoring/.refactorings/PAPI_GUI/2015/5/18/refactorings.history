@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ch.hearc.freescale.gui.frame.JFrameBoxLayout&apos; to &apos;JFrameGridLayout&apos;&#x0D;&#x0A;- Original project: &apos;PAPI_GUI&apos;&#x0D;&#x0A;- Original element: &apos;ch.hearc.freescale.gui.frame.JFrameBoxLayout&apos;&#x0D;&#x0A;- Renamed element: &apos;ch.hearc.freescale.gui.frame.JFrameGridLayout&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;JFrameBoxLayout&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;ch.hearc.freescale.gui.frame{JFrameBoxLayout.java[JFrameBoxLayout" matchStrategy="1" name="JFrameGridLayout" qualified="false" references="true" similarDeclarations="false" stamp="1430476101693" textual="false" version="1.0"/>
+</session>

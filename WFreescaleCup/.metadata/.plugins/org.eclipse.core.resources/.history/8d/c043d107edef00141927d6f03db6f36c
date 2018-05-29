@@ -1,0 +1,108 @@
+import ch.hearc.freescale.Image;
+import ch.hearc.freescale.gui.annotation.container.DisplayInInternlFrame;
+import ch.hearc.freescale.gui.annotation.view.DisplayInAiguille;
+import ch.hearc.freescale.gui.annotation.view.DisplayInFreescaleImage;
+import ch.hearc.freescale.gui.annotation.view.DisplayInGraphic;
+import ch.hearc.freescale.gui.annotation.view.DisplayInImageCurve;
+import ch.hearc.freescale.gui.annotation.view.DisplayInJauge;
+import ch.hearc.freescale.gui.annotation.view.DisplayInLabel;
+import ch.hearc.freescale.protocol.Trame_I;
+
+
+
+
+//@DisplayInSplitPane
+//@DisplayInGrindLayout
+//@DisplayInInternlFrame
+@DisplayInInternlFrame
+public class maTrame implements Trame_I
+	{
+
+	@Override
+	public byte getID()
+		{
+		return 6;
+		}
+
+	@Override
+	public short getAppID()
+		{
+		return 3;
+		}
+
+	/*------------------------------------------------------------------*\
+	|*							Constructeurs							*|
+	\*------------------------------------------------------------------*/
+
+	/*------------------------------------------------------------------*\
+	|*							Methodes Public							*|
+	\*------------------------------------------------------------------*/
+
+	/*------------------------------*\
+	|*				Set				*|
+	\*------------------------------*/
+
+	/*------------------------------*\
+	|*				Get				*|
+	\*------------------------------*/
+
+	/*------------------------------------------------------------------*\
+	|*							Methodes Private						*|
+	\*------------------------------------------------------------------*/
+
+	/*------------------------------------------------------------------*\
+	|*							Attributs Private						*|
+	\*------------------------------------------------------------------*/
+
+	@DisplayInLabel
+	Short param16;
+
+	public maTrame()
+		{
+		super();
+		}
+
+	public maTrame(Short param16, Byte param8)
+		{
+		super();
+		this.param16 = param16;
+		this.param8 = param8;
+		}
+
+	public Short getParam16()
+		{
+		return this.param16;
+		}
+
+
+	public void setParam16(Short param16)
+		{
+		this.param16 = param16;
+		}
+
+
+	public Byte getParam8()
+		{
+		return this.param8;
+		}
+
+
+	public void setParam8(Byte param8)
+		{
+		this.param8 = param8;
+		}
+
+	@DisplayInLabel
+	Byte param8;
+
+	@DisplayInJauge
+	@DisplayInAiguille
+	@DisplayInGraphic
+	@DisplayInLabel
+	Float f;
+
+	@DisplayInImageCurve
+	@DisplayInFreescaleImage
+	Image image;
+	}
+

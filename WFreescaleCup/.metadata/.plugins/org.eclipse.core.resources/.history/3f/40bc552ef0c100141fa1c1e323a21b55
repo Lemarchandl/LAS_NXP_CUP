@@ -1,0 +1,113 @@
+
+package ch.hearc.freescale.frame;
+
+import java.io.ByteArrayOutputStream;
+
+import ch.hearc.freescale.Image;
+
+public class FrameEncoder
+	{
+
+	/*------------------------------------------------------------------*\
+	|*							Constructeurs							*|
+	\*------------------------------------------------------------------*/
+
+	public FrameEncoder(Frame frame)
+		{
+		this.frame = frame;
+		}
+
+	/*------------------------------------------------------------------*\
+	|*							Methodes Public							*|
+	\*------------------------------------------------------------------*/
+
+	public byte[] encode()
+		{
+		CRC8 crc = new CRC8();
+		stream = new ByteArrayOutputStream();
+		//Start byte
+		stream.write(FrameDefinition.START_BYTE);
+		//Header
+		putByte((byte)0);
+		//AppID
+		putInt16((short)0);
+		//Message ID
+		putByte((byte)frame.getID());
+		//DATA
+		putChar(frame.getCharParam());
+		putInt16(frame.getIntParam());
+		putFloat(frame.getFloatParam());
+		putImage(frame.getImage());
+
+		//CRC
+		byte buffer[] = stream.toByteArray();
+		crc.update(buffer, 1, buffer.length-1);
+		putByte((byte)(crc.getValue()));
+
+		//STOP Byte
+		stream.write(FrameDefinition.STOP_BYTE);
+
+		return stream.toByteArray();
+		}
+
+	/*------------------------------*\
+	|*				Set				*|
+	\*------------------------------*/
+
+	/*------------------------------*\
+	|*				Get				*|
+	\*------------------------------*/
+
+	/*------------------------------------------------------------------*\
+	|*							Methodes Private						*|
+	\*------------------------------------------------------------------*/
+
+	private void putImage(Image image)
+		{
+		for(byte b:image.getPixels())
+			{
+			putByte(b);
+			}
+		}
+
+	private void putFloat(float f)
+		{
+		putInt32(Float.floatToIntBits(f));
+		}
+
+	private void putInt32(int i)
+		{
+		putByte((byte)i);
+		putByte((byte)(i >> 8));
+		putByte((byte)(i >> 16));
+		putByte((byte)(i >> 24));
+		}
+
+	private void putInt16(short i)
+		{
+		putByte((byte)i);
+		putByte((byte)(i >> 8));
+		}
+
+	private void putChar(char c)
+		{
+		putByte((byte)c);
+		}
+
+	private void putByte(byte b)
+		{
+		if (b == FrameDefinition.START_BYTE || b == FrameDefinition.STOP_BYTE || b == FrameDefinition.ESC_BYTE)
+			{
+			stream.write(FrameDefinition.ESC_BYTE);
+			b += 3;
+			}
+		stream.write(b);
+		}
+
+	/*------------------------------------------------------------------*\
+	|*							Attributs Private						*|
+	\*------------------------------------------------------------------*/
+
+	private Frame frame;
+	private ByteArrayOutputStream stream;
+	}

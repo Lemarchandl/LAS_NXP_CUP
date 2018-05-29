@@ -1,0 +1,60 @@
+
+package ch.hearc.freescale.demo.trames;
+
+import ch.hearc.freescale.gui.sender.annotation.SendableTrame;
+import ch.hearc.freescale.protocol.Trame_I;
+
+@SendableTrame
+public class TrameCmdMenu implements Trame_I
+	{
+
+	/*------------------------------------------------------------------*\
+	|*							Constructeurs							*|
+	\*------------------------------------------------------------------*/
+
+	public TrameCmdMenu()
+		{
+		//rien
+		}
+
+	public TrameCmdMenu(Integer type, Integer temo, Integer time)
+		{
+		this.type = type;
+		this.temo = temo;
+		this.time = time;
+		}
+
+	/*------------------------------------------------------------------*\
+	|*							Methodes Public							*|
+	\*------------------------------------------------------------------*/
+
+	/*------------------------------*\
+	|*				Get				*|
+	\*------------------------------*/
+
+	@Override
+	public byte getTrameID()
+		{
+		return 5;
+		}
+
+	@Override
+	public byte getAppID()
+		{
+		return (byte)252;
+		}
+
+	/*------------------------------------------------------------------*\
+	|*							Methodes Private						*|
+	\*------------------------------------------------------------------*/
+
+	/*------------------------------------------------------------------*\
+	|*							Attributs Private						*|
+	\*------------------------------------------------------------------*/
+
+	// Input
+	private Integer type;
+	private Integer temo;
+	private Integer time;
+
+	}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;ch.hearc.freescale.voitureInputStream.TrameListener.tramePerform(...)&apos; to &apos;tramePerformed&apos;&#x0D;&#x0A;- Original project: &apos;PAPI_Client&apos;&#x0D;&#x0A;- Original element: &apos;ch.hearc.freescale.voitureInputStream.TrameListener.tramePerform(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;ch.hearc.freescale.voitureInputStream.TrameListener.tramePerformed(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;tramePerform&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;ch.hearc.freescale.voitureInputStream{TrameListener.java[TrameListener~tramePerform~QTrameEvent;" name="tramePerformed" references="true" stamp="1433952500715" version="1.0"/>
+</session>

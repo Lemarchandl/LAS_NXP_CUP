@@ -1,0 +1,6 @@
+1440679458065	Rename type 'UseTutoClientGUI'
+1440679473487	Rename type 'TrameSendTuto'
+1440679481400	Rename type 'TrameReceivedTuto'
+1440679673257	Rename package 'ch.hearc.freescale.use.tuto.client.gui'
+1440679920080	Extract method 'gui'
+1440679980826	Rename method 'gui'

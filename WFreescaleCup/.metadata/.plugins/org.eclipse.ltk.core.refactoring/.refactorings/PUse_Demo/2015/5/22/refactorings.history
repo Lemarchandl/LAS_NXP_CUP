@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;Test/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;pUse_DemoMonnerat&apos;&#x0D;&#x0A;- Destination element: &apos;Test/src/(default package)&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     ch.hearc.freescale.demo.trames.TrameAvecImage.java&#x0D;&#x0A;     ch.hearc.freescale.demo.trames.TrameSansImage.java" description="Copy compilation units" destination="=Test/src&lt;" element1="/src&lt;ch.hearc.freescale.demo.trames{TrameAvecImage.java" element2="/src&lt;ch.hearc.freescale.demo.trames{TrameSansImage.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1432980722305" units="2" version="1.0"/>
+</session>
