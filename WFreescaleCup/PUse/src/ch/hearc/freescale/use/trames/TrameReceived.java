@@ -9,7 +9,6 @@ import ch.hearc.freescale.api.gui.presenter.annotation.jcomponent.DisplayGauge;
 import ch.hearc.freescale.api.gui.presenter.annotation.jcomponent.DisplayImageCurve;
 import ch.hearc.freescale.api.gui.presenter.annotation.jcomponent.DisplayImageRoll;
 import ch.hearc.freescale.api.gui.presenter.annotation.jcomponent.DisplayLevel;
-import ch.hearc.freescale.api.image.Image;
 import ch.hearc.freescale.api.protocol.Trame_I;
 
 /**
@@ -77,13 +76,22 @@ public class TrameReceived implements Trame_I
 	/**
 	 * Constructeur "plein" obligatoire
 	 */
-	public TrameReceived(Float floatField, Integer integerField, Short shortField, Byte byteField, Image imageField)
+	public TrameReceived(Float vitesseGauche, Float vitesseDroite, Float accelerationX, Float accelerationY, Float accelerationZ,Float champMagnetiqueX, Float champMagnetiqueY,Float champMagnetiqueZ, Float yaw, Float roll, Float pitch, Byte image, int alignement, Float sinus0a2)
 		{
-		this.floatField = floatField;
-		this.integerField = integerField;
-		this.shortField = shortField;
-		this.byteField = byteField;
-		this.imageField = imageField;
+		this.vitesseGauche = vitesseGauche;
+		this.vitesseDroite = vitesseDroite;
+		this.accelerationX = accelerationX;
+		this.accelerationY = accelerationY;
+		this.accelerationZ = accelerationZ;
+		this.champMagnetiqueX = champMagnetiqueX;
+		this.champMagnetiqueY = champMagnetiqueY;
+		this.champMagnetiqueZ = champMagnetiqueZ;
+		this.yaw = yaw;
+		this.roll = roll;
+		this.pitch = pitch;
+		this.image = image;
+		this.alignement = alignement;
+		this.sinus0a2 = sinus0a2;
 		}
 
 	/*------------------------------------------------------------------*\
@@ -94,16 +102,34 @@ public class TrameReceived implements Trame_I
 	public String toString()
 		{
 		StringBuilder builder = new StringBuilder();
-		builder.append("DemoTrame [floatField=");
-		builder.append(this.floatField);
-		builder.append(", integerField=");
-		builder.append(this.integerField);
-		builder.append(", shortField=");
-		builder.append(this.shortField);
-		builder.append(", byteField=");
-		builder.append(this.byteField);
-		builder.append(", imageField=");
-		builder.append(this.imageField);
+		builder.append("DemoTrame [vitesseGauche=");
+		builder.append(this.vitesseGauche);
+		builder.append(", vitesseDroite=");
+		builder.append(this.vitesseDroite);
+		builder.append(", accelerationX=");
+		builder.append(this.accelerationX);
+		builder.append(", accelerationY=");
+		builder.append(this.accelerationY);
+		builder.append(", accelerationZ=");
+		builder.append(this.accelerationZ);
+		builder.append(", champMagnetiqueX=");
+		builder.append(this.champMagnetiqueX);
+		builder.append(", champMagnetiqueY=");
+		builder.append(this.champMagnetiqueY);
+		builder.append(", champMagnetiqueZ=");
+		builder.append(this.champMagnetiqueZ);
+		builder.append(", yaw=");
+		builder.append(this.yaw);
+		builder.append(", roll=");
+		builder.append(this.roll);
+		builder.append(", pitch=");
+		builder.append(this.pitch);
+		builder.append(", image=");
+		builder.append(this.image);
+		builder.append(", alignement=");
+		builder.append(this.alignement);
+		builder.append(", sinus0a2=");
+		builder.append(this.sinus0a2);
 		builder.append("]");
 		return builder.toString();
 		}
@@ -166,20 +192,30 @@ public class TrameReceived implements Trame_I
 	 */
 
 	@DisplayCurveAbsolute(pointsToDisplay = 100, min = -1000, max = 1000)
-	private Float floatField;
 
 	@DisplayCurveRelatif(pointsToDisplay = 150)
-	private Integer integerField;
 
 	@DisplayDigit(title = "Short Field", decimalCount = 0)
-	private Short shortField;
 
 	//les a annotion sont cumulable. Il est donc possible d'afficher les même valeures dans plusieures view
 	@DisplayGauge(min = -100, max = 100)
 	@DisplayLevel(min = -100, max = 100)
-	private Byte byteField;
 
 	@DisplayImageRoll
 	@DisplayImageCurve
-	private Image imageField;
+
+	private Float vitesseGauche;
+	private Float vitesseDroite;
+	private Float accelerationX;
+	private Float accelerationY;
+	private Float accelerationZ;
+	private Float champMagnetiqueX;
+	private Float champMagnetiqueY;
+	private Float champMagnetiqueZ;
+	private Float yaw;
+	private Float roll;
+	private Float pitch;
+	private Byte image;
+	private int alignement;
+	private Float sinus0a2;
 	}
