@@ -97,6 +97,50 @@ public class TrameReceived implements Trame_I
 	/*------------------------------------------------------------------*\
 	|*							Methodes Public							*|
 	\*------------------------------------------------------------------*/
+	public Float getVitesseGauche()
+		{
+		return vitesseGauche;
+		}
+	public Float getVitesseDroite()
+		{
+		return vitesseDroite;
+		}
+	public Float getAccelerationX()
+		{
+		return accelerationX;
+		}
+	public Float getAccelerationY()
+		{
+		return accelerationY;
+		}
+	public Float getAccelerationZ()
+		{
+		return accelerationZ;
+		}
+	public Float getYaw()
+		{
+		return yaw;
+		}
+	public Float getRoll()
+		{
+		return roll;
+		}
+	public Float getPitch()
+		{
+		return pitch;
+		}
+	public Byte getImage()
+		{
+		return image;
+		}
+	public int getAlignement()
+		{
+		return alignement;
+		}
+	public Float getSinus0a2()
+		{
+		return sinus0a2;
+		}
 
 	@Override
 	public String toString()
