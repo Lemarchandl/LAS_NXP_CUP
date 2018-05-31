@@ -1,4 +1,4 @@
 #Connection
-#Fri Jun 05 11:51:58 CEST 2015
+#Thu May 31 09:21:29 CEST 2018
 Connection.Server.Port=5001
-Connection.Server.Name=localhost
+Connection.Server.Name=192.168.1.179

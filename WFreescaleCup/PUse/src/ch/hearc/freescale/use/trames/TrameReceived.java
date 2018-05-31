@@ -76,7 +76,7 @@ public class TrameReceived implements Trame_I
 	/**
 	 * Constructeur "plein" obligatoire
 	 */
-	public TrameReceived(Float vitesseGauche, Float vitesseDroite, Float accelerationX, Float accelerationY, Float accelerationZ,Float champMagnetiqueX, Float champMagnetiqueY,Float champMagnetiqueZ, Float yaw, Float roll, Float pitch, Byte image, int alignement, Float sinus0a2)
+	public TrameReceived(Float vitesseGauche, Float vitesseDroite, Float accelerationX, Float accelerationY, Float accelerationZ, Float champMagnetiqueX, Float champMagnetiqueY, Float champMagnetiqueZ, Float yaw, Float roll, Float pitch, Byte image, Short alignement, Float sinus0a2)
 		{
 		this.vitesseGauche = vitesseGauche;
 		this.vitesseDroite = vitesseDroite;
@@ -218,7 +218,7 @@ public class TrameReceived implements Trame_I
 	private Float pitch;
 	@DisplayImageRoll
 	private Byte image;
-	private int alignement;
+	private Short alignement;
 	@DisplayImageCurve
 	private Float sinus0a2;
 	}

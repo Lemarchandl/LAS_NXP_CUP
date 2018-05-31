@@ -1,7 +1,7 @@
 
 package ch.hearc.freescale.use.tuto.server.simulator.common;
 
-import ch.hearc.freescale.api.gui.presenter.annotation.container.DisplaySplit;
+import ch.hearc.freescale.api.gui.presenter.annotation.container.DisplayDeskop;
 import ch.hearc.freescale.api.gui.presenter.annotation.jcomponent.DisplayCurveAbsolute;
 import ch.hearc.freescale.api.gui.presenter.annotation.jcomponent.DisplayCurveRelatif;
 import ch.hearc.freescale.api.gui.presenter.annotation.jcomponent.DisplayDigit;
@@ -46,7 +46,9 @@ import ch.hearc.freescale.api.protocol.Trame_I;
  * 			Voire pUse_Tuto_Server pour un l'utilisation du simulateur
  *
  */
-@DisplaySplit
+//@DisplaySplit
+//@DisplayGrid
+@DisplayDeskop
 public class TrameReceivedTuto implements Trame_I
 	{
 
@@ -105,7 +107,7 @@ public class TrameReceivedTuto implements Trame_I
 	@Override
 	public byte getAppID()
 		{
-		return 10;
+		return 12;
 		}
 
 	/*------------------------------------------------------------------*\
@@ -117,17 +119,17 @@ public class TrameReceivedTuto implements Trame_I
 	\*------------------------------------------------------------------*/
 
 	//Meme ordre que les parametres envoyé par la voiture, sans ni AppID ni TrameID
-	@DisplayCurveAbsolute(pointsToDisplay= 100, min=-1000, max= 1000)
+	@DisplayCurveAbsolute(pointsToDisplay = 100, min = -1000, max = 1000)
 	private Float floatField;
 
-	@DisplayCurveRelatif(pointsToDisplay= 150)
+	@DisplayCurveRelatif(pointsToDisplay = 150)
 	private Integer integerField;
 
-	@DisplayDigit(title="Short Field",decimalCount=0)
+	@DisplayDigit(title = "Short Field", decimalCount = 0)
 	private Short shortField;
 
-	@DisplayGauge(min=-100, max = 100)
-	@DisplayLevel(min=-100, max = 100)
+	@DisplayGauge(min = -100, max = 100)
+	@DisplayLevel(min = -100, max = 100)
 	private Byte byteField;
 
 	@DisplayImageRoll
